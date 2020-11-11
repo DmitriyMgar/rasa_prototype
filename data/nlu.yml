@@ -1,92 +1,89 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
+    - привет
+    - здравствуй
+    - здравствуйте
+    - добрый день
+    - доброе утро
+    - добрый вечер
 - intent: goodbye
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-
+    - пока
+    - до свидания
+    - прощай
+    - всего доброго
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
+    - да
+    - ок
+    - верно
+    - правильно
+    - конечно
+    - разумеется
+    - само-собой
+- intent: thanks
+  examples: |
+    - спасибо
+    - благодарю
+    - спс
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
+    - нет
+    - не
+    - не совсем
+    - не думаю
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - кто ты?
+    - ты бот?
+    - ты человек?
+    - я разговариваю с ботом?
+    - я разговариваю с человеком?
+- intent: stop
+  examples: |
+    - стоп
+    - я передумал
+    - хватит
+    - отмена
+- intent: count_resources
+  examples: |
+    - Какой объем [нефти](product_type) было [добыто](operation) в [2018](year) году?
+    - [Добыча](operation) [ГК ГПН](organization) [2018](year)
+    - [Добыча](operation) [нефти](product_type) [ГК ГПН](organization) [2018](year)
+    - [Добыча](operation) [ЖУВ](product_type) [2016](year)
+    - сколько всего [газа](product_type) [добыли](operation) за [2019](year) год
+    - сколько [газа](product_type) [добыли](operation) за [2019](year) год
+    - объем [добычи](operation) [газа](product_type) за [2019](year) год
+    - объем [добычи](operation) [газа](product_type) [Арктикгаз](organization) за [2019](year) год
+    - сколько [газа](product_type) [добыла](operation) [Арктикгаз](organization) за [2019](year) год
+    - какое количество [нефти](product_type) было [добыто](operation) в [2019](year) году
+    - сколько [газа](product_type) [утилизировал](operation) [Арктикгаз](organization) за [2019](year) год
+    - сколько [газа](product_type) [добыл](operation) [Арктикгаз](organization) за [2019](year) год
+    - сколько [нефти](product_type) [добыло](operation) [Газпром нефть](organization) в [2019](year) году
+    - сколько [газа](product_type) [добыто](operation) [группой Газпром нефть](organization) за [2019](year) год
+    - сколько [газа](product_type) было [добыло](operation) [ПАО Газпром нефть](organization) в [2019](year) году
+    - сколько [нефти](product_type) было [утилизировали](operation) [группой Газпром нефть](organization) за [2019](year) год
+    - сколько [израсходовано](operation) [нефти](product_type) [группой Газпром нефть](organization) в [2019](year) году
+    - сколько [добыто](operation) [нефти](product_type) [группой Газпром нефть](organization) за [2019](year) год
+    - сколько [группа Газпром нефть](organization) [утилизировали](operation) [нефти](product_type) за [2019](year) год
+    - количество [газа](product_type) [добытого](operation) [ПАО Газпром нефть](organization) в [2019](year) году
+    - количество [нефти](product_type) [добытой](operation) [Газпром-нефть](organization) за [2019](year) год
+    - какое количество [добытого](operation) [группой Газпром нефть](organization) [газа](product_type) в [2019](year) году
+    - количество [добытой](operation) [группой Газпром нефть](organization) [нефти](product_type) за [2019](year) год
+    - Сколько [добыли](operation) [газа](product_type) в [2018](year) году?
+- intent: inform
+  examples: |
+    - [арчинское](organization)
+    - [газпром нефть](organization)
+    - [меретояханефтегаз](organization)
+    - [ноябрьскнефтегаз](organization)
+    - [газпромнефть-восток](organization)
+    - [газпромнефть-хантос](organization)
+    - [хантос](organization)
+    - в [Газпром нефти](organization)
+    - [газ](product_type)
+    - [газа](product_type)
+    - [нефть](product_type)
+    - [нефти](product_type)

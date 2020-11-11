@@ -2,12 +2,42 @@ version: "2.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Приветствие
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Прощание
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Благодарность
+  steps:
+  - intent: thanks
+  - action: utter_welcome
+
+- rule: Обращение к боту
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Запрос на подсчет ресурсов
+  steps:
+    - intent: count_resources   # intent that triggers form activation
+    - action: count_resources_form      # run the form
+    - active_loop: count_resources_form # this form is active
+
+- rule: Ответ на запрос по поводу ресурсов
+  condition:
+  - active_loop: count_resources_form   # this form must be active
+  steps:
+    - action: count_resources_form      # run the form
+    - active_loop: null            # the form is no longer active because it has been filled
+    - action: utter_submit         # action to take after the form is complete
+    - action: utter_slots_values   # action to take after the form is complete
+    - slot_was_set:
+      - operation: null
+      - product_type: null
+      - organization: null
+      - year: null

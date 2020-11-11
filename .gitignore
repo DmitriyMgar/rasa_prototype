@@ -144,3 +144,7 @@ cython_debug/
 .idea/misc.xml
 .idea/modules.xml
 .idea/rasa_prototype.iml
+
+models/
+
+story_graph.dot
